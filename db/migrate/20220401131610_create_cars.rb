@@ -5,7 +5,7 @@ class CreateCars < ActiveRecord::Migration[7.0]
       t.string :make
       t.string :model
       t.string :colors, array: true, default: []
-      t.string :price
+      t.integer :price
       t.string :photo
 
       t.timestamps

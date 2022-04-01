@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_01_132953) do
     t.string "make"
     t.string "model"
     t.string "colors", default: [], array: true
-    t.string "price"
+    t.integer "price"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

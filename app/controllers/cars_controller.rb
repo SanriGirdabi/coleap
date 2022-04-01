@@ -16,12 +16,23 @@ class CarsController < ApplicationController
   # POST /cars
   def create
     @car = Car.new(car_params)
+    @car.price = params[:price].split(' ').first.to_i
 
     if @car.save
       render json: @car, status: :created, location: @car
     else
       render json: @car.errors, status: :unprocessable_entity
     end
+  end
+
+  def price_sorted
+    sorted_cars = Car.all.order(:price)
+    render json: sorted_cars
+  end
+
+  def search_by_make
+    cars = Car.where(make: params[:make])
+    render json: cars
   end
 
   # PATCH/PUT /cars/1
