@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Example Response
 
-Things you may want to cover:
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"id":"24uobf24jlgb",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    "make":"Tesla",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    "model":"X",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    "range":{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unit":"km",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "distance":"450"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    "colors":[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "red",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "black"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    ],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    "price":"110000 EUR",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;    "photo":"https://car.com/car.jpg"<br>
+}<br>
 
-* Ruby version
+* /cars --> get action retrieves all the cars.
+* /cars --> post action create a car with given attributes. (you can see the necessary details from the example above)
+* /cars/:id --> get action retrieves specified cars by the id.
+* /by_value --> get action retrieves the cars sorted by ascending price order
+* /by_make --> get action retrieves the cars depending on the make params given
 
-* System dependencies
+## Notes
+* Right now we are just accepting the EURO values.
+* You can create the car without specifiying the currency or with currency but not contiguous to price.
+* No validation added to the model, so you can create with empty body.
+* No error handling applied.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

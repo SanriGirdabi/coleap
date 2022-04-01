@@ -35,20 +35,6 @@ class CarsController < ApplicationController
     render json: cars
   end
 
-  # PATCH/PUT /cars/1
-  def update
-    if @car.update(car_params)
-      render json: @car
-    else
-      render json: @car.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /cars/1
-  def destroy
-    @car.destroy
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
