@@ -2,16 +2,18 @@
 
 one:
   id: MyString
-  make: MyString
+  make: Mercedes
   model: MyString
-  colors: MyString
-  price: MyString
+  colors: [MyString]
+  price: '150'
   photo: MyString
+  range: {unit: 'MyString', distance: 150}
 
 two:
-  id: MyString
-  make: MyString
+  id: MyString2
+  make: Tesla
   model: MyString
-  colors: MyString
-  price: MyString
+  colors: [MyString]
+  price: '150'
   photo: MyString
+  range: {unit: 'MyString', distance: 150}

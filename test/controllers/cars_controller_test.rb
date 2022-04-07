@@ -12,7 +12,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create car" do
     assert_difference("Car.count") do
-      post cars_url, params: { car: { colors: @car.colors, id: @car.id, make: @car.make, model: @car.model, photo: @car.photo, price: @car.price } }, as: :json
+      post cars_url, params: { car: { colors: @car.colors, id: 'Test', make: @car.make, model: @car.model, photo: @car.photo, price: @car.price.to_i, range: @car.range } }, as: :json
     end
 
     assert_response :created
@@ -23,16 +23,9 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update car" do
-    patch car_url(@car), params: { car: { colors: @car.colors, id: @car.id, make: @car.make, model: @car.model, photo: @car.photo, price: @car.price } }, as: :json
+  test "should select just by make" do
+    get search_cars_url(make: 'Mercedes', order: 'desc'), as: :json, xhr: true
+    assert_match "Mercedes", @response.body
     assert_response :success
-  end
-
-  test "should destroy car" do
-    assert_difference("Car.count", -1) do
-      delete car_url(@car), as: :json
-    end
-
-    assert_response :no_content
   end
 end
