@@ -27,6 +27,6 @@
 ## Notes
 * Right now we are just accepting the EURO values.
 * You can create the car without specifiying the currency or with currency but not contiguous to price.
-* No validation added to the model, so you can create with empty body.
 * No error handling applied.
+* JUST CHECKED THE REPO AGAIN AND THOUGHT ADDING VALIDATION IS A GOOD IDEA SO ADDED THEM IN 07.04.2022
 

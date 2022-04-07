@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[ show update destroy ]
+  before_action :set_car, only: %i[ show ]
 
   # GET /cars
   def index
